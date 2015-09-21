@@ -6,7 +6,5 @@
 *.class
 *.iml
 
-/data/fs
-/data/savedGames
 /lib/
 */target/
