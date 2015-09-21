@@ -120,7 +120,10 @@ public final class PlayerSynchronizationMessageEncoder extends MessageEncoder<Pl
 		GamePacketBuilder playerProperties = new GamePacketBuilder();
 
 		playerProperties.put(DataType.BYTE, appearance.getGender().toInteger());
-		playerProperties.put(DataType.BYTE, 0);
+		// Skull icon.
+		playerProperties.put(DataType.BYTE, -1);
+		// Prayer icon.
+		playerProperties.put(DataType.BYTE, -1);
 
 		if (block.appearingAsNpc()) {
 			playerProperties.put(DataType.BYTE, 255);

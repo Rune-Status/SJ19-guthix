@@ -34,6 +34,10 @@ public final class NetworkConstants {
 	public static final int JAGGRAB_PORT;
 
 	/**
+	 * RSA Enabled.
+	 */
+	public static final boolean RSA_ENABLED = false;
+	/**
 	 * The exponent used when decrypting the RSA block.
 	 */
 	public static final BigInteger RSA_EXPONENT;

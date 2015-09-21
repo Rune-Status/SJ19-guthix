@@ -151,6 +151,8 @@ public final class Release317 extends Release {
 		register(210, spamMessageDecoder);
 		register(226, spamMessageDecoder);
 		register(121, spamMessageDecoder);
+		//Player idle message
+		register(202, spamMessageDecoder);
 
 		register(155, new FirstNpcActionMessageDecoder());
 		register(72, new SecondNpcActionMessageDecoder());

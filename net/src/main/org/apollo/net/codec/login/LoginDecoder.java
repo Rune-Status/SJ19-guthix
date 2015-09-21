@@ -155,10 +155,11 @@ public final class LoginDecoder extends StatefulFrameDecoder<LoginDecoderState> 
 			}
 
 			ByteBuf secure = payload.readBytes(length);
-
-			BigInteger value = new BigInteger(secure.array());
-			value = value.modPow(NetworkConstants.RSA_EXPONENT, NetworkConstants.RSA_MODULUS);
-			secure = Unpooled.wrappedBuffer(value.toByteArray());
+			if (NetworkConstants.RSA_ENABLED) {
+				BigInteger value = new BigInteger(secure.array());
+				value = value.modPow(NetworkConstants.RSA_EXPONENT, NetworkConstants.RSA_MODULUS);
+				secure = Unpooled.wrappedBuffer(value.toByteArray());
+			}
 
 			int id = secure.readUnsignedByte();
 			if (id != 10) {

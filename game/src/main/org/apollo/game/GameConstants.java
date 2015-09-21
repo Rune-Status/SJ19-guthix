@@ -18,6 +18,16 @@ public final class GameConstants {
 	public static final int PULSE_DELAY = 600;
 
 	/**
+	 * Update cache.
+	 */
+	public static final boolean UPDATE_CACHE_ENABLED = false;
+
+	/**
+	 * Amount of NPC bits.
+	 */
+	public static final int NPC_BITS = 14;
+
+	/**
 	 * Default private constructor to prevent instantiation by other classes.
 	 */
 	private GameConstants() {

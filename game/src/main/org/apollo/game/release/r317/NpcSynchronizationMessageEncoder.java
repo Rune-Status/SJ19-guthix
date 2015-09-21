@@ -1,5 +1,6 @@
 package org.apollo.game.release.r317;
 
+import org.apollo.game.GameConstants;
 import org.apollo.game.message.impl.NpcSynchronizationMessage;
 import org.apollo.game.model.Animation;
 import org.apollo.game.model.Direction;
@@ -80,7 +81,7 @@ public final class NpcSynchronizationMessageEncoder extends MessageEncoder<NpcSy
 		builder.putBits(5, other.getY() - npc.getY());
 		builder.putBits(5, other.getX() - npc.getX());
 		builder.putBits(1, 0); // discard walking queue
-		builder.putBits(12, seg.getNpcId());
+		builder.putBits(GameConstants.NPC_BITS, seg.getNpcId());
 		builder.putBits(1, updateRequired ? 1 : 0);
 	}
 

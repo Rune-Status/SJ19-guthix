@@ -8,6 +8,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import org.apollo.Service;
+import org.apollo.game.GameConstants;
 import org.apollo.game.io.player.PlayerLoaderResponse;
 import org.apollo.game.io.player.PlayerSerializer;
 import org.apollo.game.login.PlayerLoaderWorker;
@@ -73,7 +74,7 @@ public final class LoginService extends Service {
 	public void submitLoadRequest(LoginSession session, LoginRequest request) throws IOException {
 		int response = LoginConstants.STATUS_OK;
 
-		if (requiresUpdate(request)) {
+		if (GameConstants.UPDATE_CACHE_ENABLED && requiresUpdate(request)) {
 			response = LoginConstants.STATUS_GAME_UPDATED;
 		}
 
