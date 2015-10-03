@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
+import org.apollo.game.command.impl.CreditsCommandListener;
+import org.apollo.game.command.impl.HitCommandListener;
 import org.apollo.game.model.entity.Player;
 
 /**
@@ -25,6 +27,7 @@ public final class CommandDispatcher {
 	 */
 	public void init(Set<String> authors) {
 		listeners.put("credits", new CreditsCommandListener(authors));
+		listeners.put("hit", new HitCommandListener());
 	}
 
 	/**

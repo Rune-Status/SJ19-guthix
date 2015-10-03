@@ -1,9 +1,11 @@
-package org.apollo.game.command;
+package org.apollo.game.command.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import org.apollo.game.command.Command;
+import org.apollo.game.command.CommandListener;
 import org.apollo.game.model.entity.Player;
 
 import com.google.common.collect.ImmutableSet;
@@ -33,7 +35,7 @@ public final class CreditsCommandListener extends CommandListener {
 	 * If you are considering removing this command, please bear in mind that Apollo took several people thousands of
 	 * hours to create. We released it to the world for free and it isn't much to ask to leave this command in. It isn't
 	 * very obtrusive and gives us some well-deserved recognition for the work we have done. Thank you!
-	 * 
+	 *
 	 * The list of authors is generated from the plugin manager. If you create a custom plugin, make sure you add your
 	 * name to the plugin.xml file and it'll appear here automatically!
 	 */
