@@ -47,6 +47,8 @@ public final class NpcActionVerificationHandler extends MessageHandler<NpcAction
 			message.terminate();
 			return;
 		}
+
+		System.out.println(index);
 	}
 
 }

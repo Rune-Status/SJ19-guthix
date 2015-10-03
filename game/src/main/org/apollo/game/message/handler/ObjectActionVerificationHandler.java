@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.apollo.cache.def.ObjectDefinition;
+import org.apollo.game.action.impl.BankAction;
 import org.apollo.game.message.impl.ObjectActionMessage;
 import org.apollo.game.model.Position;
 import org.apollo.game.model.World;
@@ -22,7 +23,7 @@ public final class ObjectActionVerificationHandler extends MessageHandler<Object
 	/**
 	 * Indicates whether or not the {@link List} of {@link GameObject}s contains the object with the specified id.
 	 *
-	 * @param id The id of the object.
+	 * @param id      The id of the object.
 	 * @param objects The list of objects.
 	 * @return {@code true} if the list does contain the object with the specified id, otherwise {@code false}.
 	 */
@@ -60,6 +61,12 @@ public final class ObjectActionVerificationHandler extends MessageHandler<Object
 		if (message.getOption() >= definition.getMenuActions().length) {
 			message.terminate();
 			return;
+		}
+
+		if (message.getOption() == 1) {
+			System.out.println("got here 1");
+			new BankAction(player, player.getPosition());
+			message.terminate();
 		}
 	}
 

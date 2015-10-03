@@ -1,3 +1,4 @@
+=begin
 require 'java'
 
 java_import 'org.apollo.game.action.DistancedAction'
@@ -45,3 +46,4 @@ on :message, :second_npc_action do |player, message|
     message.terminate
   end
 end
+=end
