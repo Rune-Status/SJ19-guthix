@@ -4,6 +4,8 @@
         <chain>
             <handler>org.apollo.game.message.handler.DialogueButtonHandler</handler>
             <handler>org.apollo.game.message.handler.BankButtonMessageHandler</handler>
+            <handler>org.apollo.game.message.handler.EquipmentButtonMessageHandler</handler>
+            <handler>org.apollo.game.message.handler.RunButtonMessageHandler</handler>
         </chain>
     </message>
     <message>
