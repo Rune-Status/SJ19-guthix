@@ -4,10 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-import org.apollo.game.command.impl.CreditsCommandListener;
-import org.apollo.game.command.impl.HitCommandListener;
-import org.apollo.game.command.impl.OpenInterfaceCommandListener;
-import org.apollo.game.command.impl.PathCommandListener;
+import org.apollo.game.command.impl.*;
 import org.apollo.game.model.entity.Player;
 
 /**
@@ -32,6 +29,8 @@ public final class CommandDispatcher {
 		listeners.put("hit", new HitCommandListener());
 		listeners.put("interface", new OpenInterfaceCommandListener());
 		listeners.put("path", new PathCommandListener());
+		listeners.put("pos", new PosCommandListener());
+		listeners.put("mypos", new PosCommandListener());
 	}
 
 	/**

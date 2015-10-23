@@ -6,7 +6,6 @@ import org.apollo.game.model.Position;
 import org.apollo.game.model.entity.Player;
 import org.apollo.game.model.entity.WalkingQueue;
 import org.apollo.game.model.entity.path.AStarPathfindingAlgorithm;
-import org.apollo.game.model.entity.path.ChebyshevHeuristic;
 import org.apollo.game.model.entity.path.ManhattanHeuristic;
 
 import java.util.Deque;
@@ -14,14 +13,9 @@ import java.util.Deque;
 /**
  * Created by Corsair on 10/3/2015.
  */
-public class PathCommandListener extends CommandListener {
+public class PosCommandListener extends CommandListener {
 	@Override
 	public void execute(Player player, Command command) {
-		AStarPathfindingAlgorithm algorithm = new AStarPathfindingAlgorithm(player.getWorld().getRegionRepository(), new ChebyshevHeuristic());
-		Deque<Position> positions = algorithm.find(player.getPosition(), new Position(3090, 3495));
-		WalkingQueue queue = player.getWalkingQueue();
-
-		Position first = positions.pollFirst();
-		queue.addFirstStep(first);
+		player.sendMessage("x: " + player.getPosition().getX() + ", y: " + player.getPosition().getY() + ", height: " + player.getPosition().getHeight());
 	}
 }
